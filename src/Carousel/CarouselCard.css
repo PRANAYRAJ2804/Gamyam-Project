@@ -6,15 +6,17 @@
 .carousel {
     position: relative;
     overflow: hidden;
-    /* Hide overflow to prevent image overflow */
+    height: 250px;
+    width: 100%;
 }
 
 .carousel img {
     display: none;
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    min-height: 100%;
     transition: opacity 0.5s ease;
-    /* Add transition effect */
+    object-fit: cover;
 }
 
 .carousel img.active {
@@ -35,20 +37,27 @@
 
 .prev {
     left: 10px;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    font-size: 24px;
 }
 
 .next {
     right: 10px;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    font-size: 24px;
 }
 
 .card {
     position: relative;
-    /* Ensure absolute positioning within the card */
     border-radius: 12px;
     transition: 0.3s ease;
     cursor: pointer;
     width: 400px;
-    height: 300px;
+    height: 320px;
     margin-bottom: 2%;
     margin-left: 1.5%;
     overflow: hidden;
@@ -60,6 +69,7 @@
     position: absolute;
     top: 10px;
     right: 10px;
+    z-index: 1;
 }
 
 .icon {
@@ -75,7 +85,6 @@
 .card-image {
     object-fit: cover;
     height: 225px;
-    /* Adjust height for the icons */
     width: 100%;
 }
 
@@ -102,12 +111,10 @@
 
 .separator {
     margin: 0 1px;
-    /* Adjust spacing between elements */
 }
 
 .separator {
     margin: 0 5px;
-    /* Adjust spacing between elements */
 }
 
 .description-price {

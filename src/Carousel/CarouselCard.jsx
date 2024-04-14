@@ -34,24 +34,46 @@ const CarouselCard = ({
   return (
     <div className="card">
       <div className="icon-container">
-        <img src={arrowIcon} alt="Arrow" className="icon" />
-        <img src={likeIcon} alt="Like" className="icon" />
+        <img
+          src={arrowIcon}
+          alt="Arrow"
+          className="icon"
+          style={{ width: "25px", height: "25px" }}
+        />
+        <img
+          src={likeIcon}
+          alt="Like"
+          className="icon"
+          style={{ width: "25px", height: "25px" }}
+        />
       </div>
       <div className="carousel-card">
         <div className="carousel">
-          {images.map((image, index) => (
-            <img
-              key={index}
-              src={image}
-              alt={`Carousel Image ${index}`}
-              className={index === currentIndex ? "active" : ""}
-            />
-          ))}
-          <button className="prev" onClick={handlePrev}>
-            Prev
+          {images.length === 0 ? (
+            <h1>No image to display</h1>
+          ) : (
+            images.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt={`Carousel Image ${index}`}
+                className={index === currentIndex ? "active" : ""}
+              />
+            ))
+          )}
+          <button
+            className="prev"
+            onClick={handlePrev}
+            style={{ width: "40px", height: "40px" }}
+          >
+            &lt;
           </button>
-          <button className="next" onClick={handleNext}>
-            Next
+          <button
+            className="next"
+            onClick={handleNext}
+            style={{ width: "40px", height: "40px" }}
+          >
+            &gt;
           </button>
         </div>
         <div className="card__info">
@@ -66,6 +88,7 @@ const CarouselCard = ({
                   {mandal_name},
                 </h6>
               </div>
+              <span className="separator"></span>
               <h6 style={{ fontWeight: "bold", margin: "0" }}>
                 {district_name}(dt)
               </h6>
