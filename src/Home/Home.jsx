@@ -66,7 +66,13 @@ const Home = () => {
           />
         ))}
       </div>
-      {loading && <div className="loading-animation"></div>}
+      {loading && (
+        <div className="loading-animation">
+          <div class="spinner-container">
+            <div class="spinner"></div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

@@ -34,7 +34,22 @@
 }
 
 .loading-animation {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* Ensure it takes the full width */
+    height: 100vh;
+    /* Assuming you want it to cover the entire viewport height */
+}
+
+.spinner-container {
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+.loading-animation .spinner {
     width: 80px;
     height: 80px;
     border: 6px solid #d9c8c8;
