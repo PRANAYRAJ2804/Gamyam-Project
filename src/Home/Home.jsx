@@ -19,6 +19,7 @@ const Home = () => {
       const data = await response.json();
       setRecords((prevRecords) => [...prevRecords, ...data.results]);
       setPage((prevPage) => prevPage + 1);
+      console.log(data);
     } catch (error) {
       console.error("Error fetching data:", error);
     } finally {
@@ -68,8 +69,8 @@ const Home = () => {
       </div>
       {loading && (
         <div className="loading-animation">
-          <div class="spinner-container">
-            <div class="spinner"></div>
+          <div className="spinner-container">
+            <div className="spinner"></div>
           </div>
         </div>
       )}
