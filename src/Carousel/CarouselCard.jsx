@@ -64,16 +64,16 @@ const CarouselCard = ({
           <button
             className="prev"
             onClick={handlePrev}
-            style={{ width: "40px", height: "40px" }}
+            style={{ width: "40px", height: "40px", opacity: "60%" }}
           >
-            &lt;
+            ❮{/* &lt; */}
           </button>
           <button
             className="next"
             onClick={handleNext}
-            style={{ width: "40px", height: "40px" }}
+            style={{ width: "40px", height: "40px", opacity: "60%" }}
           >
-            &gt;
+            ❯{/* &gt; */}
           </button>
         </div>
         <div className="card__info">

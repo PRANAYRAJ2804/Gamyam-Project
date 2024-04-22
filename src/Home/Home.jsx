@@ -17,7 +17,11 @@ const Home = () => {
         `https://prod-be.1acre.in/lands/?ordering=-updated_at&page=${page}&page_size=10`
       );
       const data = await response.json();
-      setRecords((prevRecords) => [...prevRecords, ...data.results]);
+      if (page === 1) {
+        setRecords(data.results);
+      } else {
+        setRecords((prevRecords) => [...prevRecords, ...data.results]);
+      }
       setPage((prevPage) => prevPage + 1);
       console.log(data);
     } catch (error) {
